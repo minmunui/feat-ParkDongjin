@@ -17,7 +17,6 @@ git clone [레포지토리 주소]
 ```bash
 npm install
 ```
-  
 
 - 프로젝트를 실행합니다.
 
