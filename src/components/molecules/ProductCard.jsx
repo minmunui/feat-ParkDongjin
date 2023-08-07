@@ -4,6 +4,9 @@ import Photo from "../atoms/Photo";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
+import { staticServerUri } from "../../services/api";
+
+
 const ProductCard = ({ product }) => {
   return (
     <Card to={`/product/${product.id}`}>
@@ -12,7 +15,7 @@ const ProductCard = ({ product }) => {
           className={
             "product-photo transition-all duration-300 ease-in-out hover:scale-[1.1] hover:shadow-xl"
           }
-          src={product.image}
+          src={`${staticServerUri}/images/products/${product.image}`}
           alt={product.productName}
         />
       </div>
