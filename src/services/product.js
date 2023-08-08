@@ -19,3 +19,23 @@ export const getProductById = (id) => {
   }
   return instance.get("/products/" + id);
 };
+
+export const fetchProducts = async (page = 0) => {
+  try {
+    if (typeof page !== "number") {
+      throw new Error("page는 숫자이어야 합니다.");
+    }
+    if (isNaN(page)) {
+      throw new Error("page는 숫자이어야 합니다.");
+    }
+    if (page < 0) {
+      throw new Error("page는 0보다 작을 수 없습니다.");
+    }
+    const response = await instance.get(`/products?page=${page}`);
+    // console.log("FetchProducts Api data", response);
+    return response.data.response;
+  } catch (error) {
+    // console.log("FetchProducts Api Error", error);
+    throw error;
+  }
+};
