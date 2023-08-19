@@ -22,7 +22,7 @@ const GlobalNavBar = () => {
 
   return (
     <>
-      <nav className={"global-nav-bar"}>
+      <nav className={"m-1 global-nav-bar"}>
         <div className={"logo"}>
           <Link className={"logo button object-contain"} to={"/"}>
             <img src={staticServerUri + "/images/logoKakao.png"} alt={"logo"} />

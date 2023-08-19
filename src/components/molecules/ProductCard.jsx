@@ -3,12 +3,19 @@ import Card from "../atoms/Card";
 import Photo from "../atoms/Photo";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { useEffect, useState } from "react";
+import SkeletonProductCard from "./SkeletonProductCard";
 
-import { staticServerUri } from "../../services/api";
+const ProductCard = ({ product, isFetching }) => {
+  const [isFetched, setIsFetched] = useState(false);
 
+  useEffect(() => {
+    if (!isFetching) {
+      setIsFetched(true);
+    }
+  }, [isFetching]);
 
-const ProductCard = ({ product }) => {
-  return (
+  return isFetched ? (
     <Card to={`/product/${product.id}`}>
       <div className={"image-wrapper min-h-[210px] overflow-hidden"}>
         <Photo
@@ -34,6 +41,8 @@ const ProductCard = ({ product }) => {
         {comma(product.price || <Skeleton />)}원
       </div>
     </Card>
+  ) : (
+    <SkeletonProductCard />
   );
 };
 
