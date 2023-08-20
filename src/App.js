@@ -19,6 +19,7 @@ import OrderCompletePage from "./components/pages/OrderCompletePage";
 
 export const ToastContext = createContext(null);
 const basename = process.env.REACT_APP_PATH;
+
 function App() {
   const { toastMessage, toastShow, showToast, hideToast } = useToast();
 

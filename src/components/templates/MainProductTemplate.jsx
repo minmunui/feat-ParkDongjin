@@ -12,7 +12,7 @@ const IMAGES = [
   "/images/carousel/carouselitem3.jpeg",
 ];
 
-const MainProductTemplate = ({ children }) => {
+const MainProductTemplate = () => {
   const bottomObserver = useRef(null);
   const {
     isFetchingNextPage, // 다음 페이지를 가져오는 요청이 진행 중인지 여부
@@ -47,8 +47,6 @@ const MainProductTemplate = ({ children }) => {
       alert("서버에 문제가 있습니다. 잠시 후 다시 시도해주세요.");
     }
   }, [error]);
-
-  console.log("products", products);
 
   return (
     <div className="main-product-template flex max-w-[1380px] flex-col items-center justify-center gap-4">

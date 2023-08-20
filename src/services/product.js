@@ -32,10 +32,8 @@ export const fetchProducts = async (page = 0) => {
       throw new Error("page는 0보다 작을 수 없습니다.");
     }
     const response = await instance.get(`/products?page=${page}`);
-    // console.log("FetchProducts Api data", response);
     return response.data.response;
   } catch (error) {
-    // console.log("FetchProducts Api Error", error);
     throw error;
   }
 };
