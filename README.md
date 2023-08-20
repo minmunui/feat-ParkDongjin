@@ -23,3 +23,8 @@ npm install
 ```bash
 npm start
 ```
+
+## 3. 주의사항
+
+해당 레포지토리의 main브랜치는 카카오톡 IDE 크램폴린에 배포하기 위한 것으로 로컬에서 실행 시 오류가 발생할 수 있습니다.
+로컬 실행을 위해서는 feat-ParkDongjin 브랜치를 사용하세요
